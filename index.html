@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Travel Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Japan Travel Helper</h1>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#datetime">Date & Time</a></li>
+                <li><a href="#itinerary">Itinerary</a></li>
+                <li><a href="#currency">Currency Converter</a></li>
+                <li><a href="#phrasebook">Phrasebook</a></li>
+                <li><a href="#places">Places to Visit</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#tips">General Tips</a></li>
+                <li id="last-day-link-item"><a href="last_day_helper.html">Last Day Plan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Trip Overview</h2>
+            <p>This 15-day itinerary focuses on the unique history, culture, and cuisine of Kyushu, southern Honshu, and the cultural heart of Kyoto, with a special emphasis on enjoying the spring atmosphere.</p>
+            <p><strong>Route:</strong> Sydney (SYD) -> Fukuoka (FUK) -> Nagasaki -> Hiroshima -> Kyoto -> Osaka (KIX) -> Sydney (SYD)</p>
+            <h3>Estimated Grand Total (for 2 people, 15 days):</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Cheap (AUD)</th>
+                        <th>Normal (AUD)</th>
+                        <th>Pricy (AUD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Flights</strong></td><td>$1,400</td><td>$2,000</td><td>$6,000</td></tr>
+                    <tr><td><strong>Accommodation</strong></td><td>$1,500</td><td>$3,000</td><td>$7,500</td></tr>
+                    <tr><td><strong>Ground Transport</strong></td><td>$700</td><td>$700</td><td>$700</td></tr>
+                    <tr><td><strong>Food & Drink</strong></td><td>$1,100</td><td>$2,200</td><td>$4,400</td></tr>
+                    <tr><td><strong>Activities</strong></td><td>$350</td><td>$650</td><td>$1,100</td></tr>
+                    <tr><td><strong>Travel Insurance</strong></td><td>$150</td><td>$230</td><td>$320</td></tr>
+                    <tr><td><strong>TOTAL ESTIMATE</strong></td><td><strong>$5,200</strong></td><td><strong>$8,780</strong></td><td><strong>$20,020</strong></td></tr>
+                </tbody>
+            </table>
+            <p><em>Note: These totals are estimates and do not include personal shopping, souvenirs, or unforeseen expenses. Accommodation and Food & Drink estimates have been slightly adjusted to reflect the additional day and city.</em></p>
+        </section>
+
+        <section id="datetime">
+            <h2>Current Time</h2>
+            <p><strong>Sydney Time:</strong> <span id="sydney-time"></span></p>
+            <p><strong>Tokyo Time:</strong> <span id="tokyo-time"></span></p>
+        </section>
+
+        <section id="phrasebook">
+            <h2>Basic Japanese Phrasebook</h2>
+            <div class="phrase-list">
+                <div class="phrase-item">
+                    <p><strong>Hello:</strong> Konnichiwa (こんにちは) <button class="play-audio" data-audio-src="audio/konnichiwa.mp3" aria-label="Play audio for Konnichiwa">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Thank you:</strong> Arigato gozaimasu (ありがとうございます) <button class="play-audio" data-audio-src="audio/arigato_gozaimasu.mp3" aria-label="Play audio for Arigato gozaimasu">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Excuse me / Sorry:</strong> Sumimasen (すみません) <button class="play-audio" data-audio-src="audio/sumimasen.mp3" aria-label="Play audio for Sumimasen">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Yes:</strong> Hai (はい) <button class="play-audio" data-audio-src="audio/hai.mp3" aria-label="Play audio for Hai">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>No:</strong> Iie (いいえ) <button class="play-audio" data-audio-src="audio/iie.mp3" aria-label="Play audio for Iie">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Please:</strong> Onegaishimasu (お願いします) <button class="play-audio" data-audio-src="audio/onegaishimasu.mp3" aria-label="Play audio for Onegaishimasu">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>How much is this?:</strong> Kore wa ikura desu ka? (これはいくらですか？) <button class="play-audio" data-audio-src="audio/kore_wa_ikura_desu_ka.mp3" aria-label="Play audio for Kore wa ikura desu ka">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Where is the restroom?:</strong> Toire wa doko desu ka? (トイレはどこですか？) <button class="play-audio" data-audio-src="audio/toire_wa_doko_desu_ka.mp3" aria-label="Play audio for Toire wa doko desu ka">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Can I have the bill?:</strong> Okaikei onegaishimasu (お会計お願いします) <button class="play-audio" data-audio-src="audio/okaikei_onegaishimasu.mp3" aria-label="Play audio for Okaikei onegaishimasu">🔊</button></p>
+                </div>
+                <div class="phrase-item">
+                    <p><strong>Delicious:</strong> Oishii (おいしい) <button class="play-audio" data-audio-src="audio/oishii.mp3" aria-label="Play audio for Oishii">🔊</button></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerary">
+            <h2>15-Day Itinerary: Kyushu, Southern Honshu & Kyoto</h2>
+            <h3>Arrival Date: Suggesting April 7th, 2026 (Tuesday)</h3>
+
+            <h3>Day 1: Arrival in Fukuoka & Hakata Exploration (April 7th, Tuesday)</h3>
+            <ul>
+                <li><strong>Morning/Afternoon:</strong> Arrive at Fukuoka Airport (FUK). Clear customs, purchase IC cards. Take the subway to Hakata Station. Check into your accommodation.</li>
+                <li><strong>Afternoon:</strong> Explore the Hakata area. Visit <strong>Hakata Station City</strong> for shopping and dining. Stroll through <strong>Canal City Hakata</strong>, a large shopping and entertainment complex.</li>
+                <li><strong>Evening:</strong> Experience Fukuoka's famous <strong>Yatai (food stalls)</strong> along the Nakasu River.</li>
+                <li><strong>Accommodation Options (per night for 2 people):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $70-100):</strong> Hostel World Fukuoka, WeBase Hakata, The Life Hostel & Bar.</li>
+                        <li><strong>Normal (AUD $150-250):</strong> Hotel Forza Hakata, Dormy Inn Premium Hakata Canal City, JR Kyushu Hotel Blossom Hakata Chuo.</li>
+                        <li><strong>Pricy (AUD $300-500+):</strong> Grand Hyatt Fukuoka, Hotel Okura Fukuoka, The Royal Park Hotel Fukuoka.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinner Options (per person):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $10-20):</strong> Yatai stalls (Hakata Ramen, Yakitori), Shin Shin Hakata Ramen, Hakata Issou (ramen).</li>
+                        <li><strong>Normal (AUD $20-50):</strong> Hakata Hanamidori (Mizutaki), Hakata Motsunabe Yamanaka (Motsunabe), Umeyama Teppei (Teishoku, Goma Saba).</li>
+                        <li><strong>Pricy (AUD $50-100+):</strong> Wagyuryori Koshitsu Teppanyaki Zuisho Haruyoshi Branch (Wagyu Teppanyaki), Tatsumi Sushi (creative sushi).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Day 2: Fukuoka Culture & Gardens (April 8th, Wednesday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Visit <strong>Dazaifu Tenmangu Shrine</strong>, a beautiful shrine dedicated to the god of learning, surrounded by plum and cherry trees. Explore the charming town around it.</li>
+                <li><strong>Afternoon:</strong> Return to Fukuoka. Visit <strong>Ohori Park</strong>, a large park with a beautiful pond, perfect for a leisurely stroll. Nearby, explore the <strong>Fukuoka Castle Ruins</strong> in Maizuru Park (check for any lingering late cherry blossoms).</li>
+                <li><strong>Evening:</strong> Enjoy dinner in the Tenjin area, known for its shopping and diverse dining scene.</li>
+            </ul>
+
+            <h3>Day 3: Travel to Nagasaki & Peace Memorial (April 9th, Thursday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Check out of your Fukuoka accommodation. Take a train from Hakata Station to Nagasaki Station (approx. 2 hours). Check into your Nagasaki accommodation.</li>
+                <li><strong>Afternoon:</strong> Visit the <strong>Nagasaki Peace Park</strong> and <strong>Atomic Bomb Museum</strong>. This is a somber but essential experience to understand Nagasaki's history.</li>
+                <li><strong>Evening:</strong> Enjoy dinner in the Shinchi Chinatown area.</li>
+                <li><strong>Accommodation Options (per night for 2 people):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $60-90):</strong> Casa Blanca Guesthouse, Hostel Casa Noda, APA Hotel Nagasaki Dejima.</li>
+                        <li><strong>Normal (AUD $120-200):</strong> Dormy Inn Premium Nagasaki Ekimae, Hotel Forza Nagasaki, Hotel Belleview Nagasaki Dejima.</li>
+                        <li><strong>Pricy (AUD $250-400+):</strong> Hotel New Nagasaki, Hilton Nagasaki, Garden Terrace Nagasaki Hotels & Resorts.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinner Options (per person):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $10-20):</strong> Local eateries for Champon, Sara Udon, or Kakuni Manju in Shinchi Chinatown.</li>
+                        <li><strong>Normal (AUD $20-50):</strong> Restaurants specializing in Turkish Rice, more established Champon/Sara Udon restaurants.</li>
+                        <li><strong>Pricy (AUD $50-100+):</strong> Upscale restaurants in Dejima Wharf with harbor views, specialty restaurants for refined local dishes.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Day 4: Nagasaki History & Views (April 10th, Friday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Explore <strong>Glover Garden</strong>, an open-air museum with Western-style residences and stunning views of Nagasaki Harbor.</li>
+                <li><strong>Afternoon:</strong> Visit <strong>Dejima</strong>, the historic artificial island, to learn about Japan's period of isolation and trade with the Dutch.</li>
+                <li><strong>Evening:</strong> Take the ropeway up <strong>Mount Inasa (Inasayama)</strong> for one of Japan's "new three major night views."</li>
+            </ul>
+
+            <h3>Day 5: Travel to Hiroshima & Miyajima Island (April 11th, Saturday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Check out of your Nagasaki accommodation. Take a train to Hiroshima (approx. 3.5-4 hours). Store your luggage at Hiroshima Station.</li>
+                <li><strong>Afternoon:</strong> Take a ferry to <strong>Miyajima Island</strong>. Visit the iconic <strong>Itsukushima Shrine</strong> with its "floating" torii gate (check tide times for best viewing). Explore the island, perhaps hike a bit or see the deer.</li>
+                <li><strong>Evening:</strong> Return to Hiroshima. Check into your accommodation. Enjoy Hiroshima-style Okonomiyaki for dinner.</li>
+                <li><strong>Accommodation Options (per night for 2 people):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $70-100):</strong> Santiago Guesthouse Hiroshima, WeBase Hiroshima, Capsule Hotel & Sauna New Japan EX.</li>
+                        <li><strong>Normal (AUD $150-250):</strong> Hotel Granvia Hiroshima, Dormy Inn Hiroshima, Mitsui Garden Hotel Hiroshima.</li>
+                        <li><strong>Pricy (AUD $300-500+):</strong> Sheraton Grand Hiroshima Hotel, Rihga Royal Hotel Hiroshima, The Knot Hiroshima.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinner Options (per person):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $10-20):</strong> Basic Okonomiyaki from smaller shops, Momiji Manju (snack).</li>
+                        <li><strong>Normal (AUD $20-50):</strong> Okonomiyaki in Okonomi-mura, casual Anago Meshi, Izakayas with local dishes.</li>
+                        <li><strong>Pricy (AUD $50-100+):</strong> Specialty Oyster restaurants, high-end Anago Meshi on Miyajima, upscale Ryotei.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Day 6: Hiroshima Peace & History (April 12th, Sunday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Visit the <strong>Peace Memorial Park</strong> and <strong>Atomic Bomb Dome</strong>. Spend time at the <strong>Peace Memorial Museum</strong>.</li>
+                <li><strong>Afternoon:</strong> Explore <strong>Shukkei-en Garden</strong>, a beautiful traditional Japanese garden.</li>
+                <li><strong>Evening:</strong> Enjoy dinner, perhaps trying some local oysters if in season.</li>
+            </ul>
+
+            <h3>Day 7: Travel to Kyoto & Gion Exploration (April 13th, Monday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Check out of your Hiroshima accommodation. Take a Shinkansen to Kyoto Station (approx. 1.5-2 hours). Check into your accommodation.</li>
+                <li><strong>Afternoon:</strong> Explore <strong>Gion</strong>, Kyoto's famous geisha district. Wander through its traditional streets, visit Yasaka Shrine, and enjoy the atmosphere.</li>
+                <li><strong>Evening:</strong> Enjoy dinner in Gion or Pontocho Alley.</li>
+                <li><strong>Accommodation Options (per night for 2 people):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $80-120):</strong> Piece Hostel Kyoto, The Millennials Kyoto, K's House Kyoto.</li>
+                        <li><strong>Normal (AUD $180-300):</strong> Hotel Gracery Kyoto Sanjo, Mitsui Garden Hotel Kyoto Shijo, Hotel Monterey Kyoto.</li>
+                        <li><strong>Pricy (AUD $350-700+):</strong> The Ritz-Carlton Kyoto, Four Seasons Hotel Kyoto, Hotel Okura Kyoto, traditional Ryokans like Tawaraya or Hiiragiya.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinner Options (per person):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $10-25):</strong> Ramen shops (e.g., Ichiran, Ippudo), street food in Nishiki Market (during opening hours), casual Udon/Soba.</li>
+                        <li><strong>Normal (AUD $25-70):</strong> Izakayas, restaurants specializing in Tofu dishes, Obanzai (Kyoto home cooking), more established Sushi/Tempura.</li>
+                        <li><strong>Pricy (AUD $70-200+):</strong> Kaiseki Ryori (multi-course traditional dinner), high-end Sushi/Tempura, fine dining with Kyo-ryori (Kyoto cuisine).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Day 8: Kyoto Temples & Gardens (April 14th, Tuesday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Visit <strong>Fushimi Inari Shrine</strong>, famous for its thousands of vermilion torii gates.</li>
+                <li><strong>Afternoon:</strong> Explore <strong>Kiyomizu-dera Temple</strong>, a UNESCO World Heritage site with a stunning wooden stage offering panoramic views of Kyoto.</li>
+                <li><strong>Evening:</strong> Enjoy dinner in the Pontocho area.</li>
+            </ul>
+
+            <h3>Day 9: Kyoto Culture & Late Blossoms (April 15th, Wednesday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Visit <strong>Arashiyama Bamboo Grove</strong> and <strong>Tenryu-ji Temple</strong>.</li>
+                <li><strong>Afternoon:</strong> Seek out <strong>late cherry blossom spots</strong> like <strong>Ninna-ji Temple</strong> (Omuro cherries) or <strong>Haradani-en Garden</strong> (private garden with diverse late bloomers).</li>
+                <li><strong>Evening:</strong> Enjoy a special Kyoto dinner.</li>
+            </ul>
+
+            <h3>Day 10: Travel to Osaka & Dotonbori (April 16th, Thursday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Check out of your Kyoto accommodation. Take a short train ride to Osaka (Shin-Osaka or Umeda/Namba, approx. 15-30 minutes). Check into your Osaka accommodation.</li>
+                <li><strong>Afternoon:</strong> Head straight to <strong>Dotonbori</strong> and <strong>Namba</strong>. Soak in the vibrant atmosphere, see the Glico Man sign, and explore the bustling streets.</li>
+                <li><strong>Evening:</strong> Indulge in Osaka's famous street food for dinner (Takoyaki, Kushikatsu).</li>
+                <li><strong>Accommodation Options (per night for 2 people):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $80-120):</strong> Hostel World Osaka, The Dorm Hostel Osaka, Hotel Shin-Imamiya.</li>
+                        <li><strong>Normal (AUD $160-280):</strong> Hotel Gracery Osaka Namba, Hotel Hankyu RESPIRE Osaka, Cross Hotel Osaka.</li>
+                        <li><strong>Pricy (AUD $350-600+):</strong> The Ritz-Carlton Osaka, Conrad Osaka, St. Regis Osaka, InterContinental Osaka.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinner Options (per person):</strong>
+                    <ul>
+                        <li><strong>Cheap (AUD $10-20):</strong> Takoyaki stalls, Kushikatsu eateries (Shinsekai), Butaman (551 Horai).</li>
+                        <li><strong>Normal (AUD $20-50):</strong> Okonomiyaki restaurants, Udon specialty shops, Negiyaki restaurants, Horumonyaki (Izakayas).</li>
+                        <li><strong>Pricy (AUD $50-100+):</strong> High-end Okonomiyaki/Teppanyaki, Fugu (Tecchiri) restaurants, upscale Izakayas.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Day 11: Osaka Castle & Shinsekai (April 17th, Friday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Visit <strong>Osaka Castle</strong> and its surrounding park. Climb to the top for panoramic views.</li>
+                <li><strong>Afternoon:</strong> Explore <strong>Shinsekai</strong> district, known for its retro charm, Tsutenkaku Tower, and many Kushikatsu restaurants.</li>
+                <li><strong>Evening:</strong> Enjoy dinner in Shinsekai or explore another area like Umeda.</li>
+            </ul>
+
+            <h3>Day 12: Universal Studios Japan OR Day Trip to Nara (April 18th, Saturday)</h3>
+            <ul>
+                <li><strong>Option 1: Universal Studios Japan:</strong> Spend a full day enjoying the rides and attractions, especially The Wizarding World of Harry Potter or Super Nintendo World.</li>
+                <li><strong>Option 2: Day Trip to Nara:</strong> Take a short train ride to Nara to visit Todai-ji Temple (with its giant Buddha statue) and interact with the friendly wild deer in Nara Park.</li>
+                <li><strong>Evening:</strong> Return to Osaka for dinner.</li>
+            </ul>
+
+            <h3>Day 13: Relaxing Spa Experience & Shopping (April 19th, Sunday)</h3>
+            <ul>
+                <li><strong>Morning/Afternoon: Relaxing Day Spa Experience</strong>
+                    <ul>
+                        <li><strong>Option 1 (Normal - AUD $50-100 per person): Spa World:</strong> Enjoy a full day at this multi-story onsen theme park with various themed baths and relaxation areas.</li>
+                        <li><strong>Option 2 (Pricy - AUD $100-200 per person): Solaniwa Onsen Osaka Bay Tower:</strong> Experience a traditional Japanese atmosphere with various baths, gardens, and dining options.</li>
+                        <li><strong>Option 3 (Luxury - AUD $200-400+ per person): Hotel Spa (e.g., Ritz-Carlton, Conrad):</strong> Indulge in high-end spa treatments and facilities for a more exclusive and tranquil experience.</li>
+                    </ul>
+                </li>
+                <li><strong>Afternoon:</strong> Enjoy some last-minute shopping in areas like Umeda (department stores, Osaka Station City) or Shinsaibashi (covered shopping arcade).</li>
+                <li><strong>Evening:</strong> Special Last Night Dinner.</li>
+            </ul>
+
+            <h3>Day 14: Special Last Day (April 20th, Monday)</h3>
+            <ul>
+                <li><strong>Morning: Special Last Day Plan</strong>
+                    <ul>
+                        <li><strong>Option 1 (Relaxed): Kuromon Ichiba Market & Breakfast:</strong> Start your day with a culinary adventure at "Osaka's Kitchen." Sample fresh seafood, local snacks, and enjoy a leisurely breakfast. Pick up some last-minute edible souvenirs.</li>
+                        <li><strong>Option 2 (Scenic): Umeda Sky Building Kuchu Teien Observatory:</strong> Visit this iconic observatory for breathtaking panoramic views of Osaka. It's a fantastic way to bid farewell to the city.</li>
+                        <li><strong>Option 3 (Cultural): Sumiyoshi Taisha Shrine:</strong> Visit one of Japan's oldest shrines, known for its unique architecture and serene atmosphere, offering a peaceful start to your last day.</li>
+                    </ul>
+                </li>
+                <li><strong>Afternoon:</strong> Enjoy any last-minute activities or revisit a favorite spot.</li>
+                <li><strong>Evening:</strong> Final dinner in Osaka.</li>
+            </ul>
+
+            <h3>Day 15: Departure (April 21st, Tuesday)</h3>
+            <ul>
+                <li><strong>Morning:</strong> Enjoy a leisurely breakfast. Depending on your flight time, you might have time for some final souvenir shopping or a quick visit to a nearby park.</li>
+                <li><strong>Late Morning/Early Afternoon:</strong> Head to Kansai International Airport (KIX) for your departure. Allow ample time for travel to the airport (approx. 1 hour by train from Namba/Umeda).</li>
+            </ul>
+        </section>
+
+        <section id="currency">
+            <h2>Currency Converter (AUD to JPY & JPY to AUD)</h2>
+            <div class="converter">
+                <label for="aud">AUD:</label>
+                <input type="number" id="aud" placeholder="Enter AUD amount">
+                <p>Equals: <span id="jpy-output">0</span> JPY</p>
+            </div>
+            <div class="converter">
+                <label for="jpy">JPY:</label>
+                <input type="number" id="jpy" placeholder="Enter JPY amount">
+                <p>Equals: <span id="aud-output">0</span> AUD</p>
+            </div>
+            <p><em>Exchange rate is an estimate and will be updated via JavaScript.</em></p>
+        </section>
+
+        <section id="places">
+            <h2>Places to Visit - Image Gallery</h2>
+            <div class="image-gallery">
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Fukuoka+Yatai" alt="Fukuoka Yatai">
+                    <figcaption>Fukuoka Yatai (Food Stalls)</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Dazaifu+Tenmangu" alt="Dazaifu Tenmangu Shrine">
+                    <figcaption>Dazaifu Tenmangu Shrine</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Nagasaki+Peace+Park" alt="Nagasaki Peace Park">
+                    <figcaption>Nagasaki Peace Park</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Glover+Garden" alt="Glover Garden">
+                    <figcaption>Glover Garden, Nagasaki</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Miyajima+Torii" alt="Miyajima Torii Gate">
+                    <figcaption>Itsukushima Shrine, Miyajima</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Hiroshima+Dome" alt="Hiroshima Atomic Bomb Dome">
+                    <figcaption>Hiroshima Atomic Bomb Dome</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Gion+Kyoto" alt="Gion District Kyoto">
+                    <figcaption>Gion District, Kyoto</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Fushimi+Inari" alt="Fushimi Inari Shrine">
+                    <figcaption>Fushimi Inari Shrine, Kyoto</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Arashiyama+Bamboo" alt="Arashiyama Bamboo Grove">
+                    <figcaption>Arashiyama Bamboo Grove, Kyoto</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Dotonbori+Osaka" alt="Dotonbori Osaka">
+                    <figcaption>Dotonbori, Osaka</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Osaka+Castle" alt="Osaka Castle">
+                    <figcaption>Osaka Castle</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200?text=Nara+Deer" alt="Nara Deer">
+                    <figcaption>Nara Park Deer (Day Trip Option)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="map">
+            <h2>Map - Restaurants & Hotels Near You</h2>
+            <p>This map provides a general overview. For real-time restaurant and hotel recommendations based on your current location, it's best to use local search apps like Google Maps or Tabelog on your mobile device during your trip.</p>
+            <div class="map-container">
+                <!-- Placeholder for an embedded map. You can replace this with a dynamic map API if desired. -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d326798.87900000004!2d135.50216515!3d34.683200000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6553406e2e1%3A0xc5516461a6008fa6!2sOsaka%2C%20Japan!5e0!3m2!1sen!2sau!4v1701000000000!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>General Tips for Visiting Japan</h2>
+            <ul>
+                <li><strong>Cash is King:</strong> While cards are accepted in major stores and hotels, many smaller shops, restaurants, and attractions are cash-only. Always carry enough yen.</li>
+                <li><strong>Learn Basic Phrases:</strong> "Arigato gozaimasu" (thank you), "Sumimasen" (excuse me/sorry), "Konnichiwa" (hello) go a long way.</li>
+                <li><strong>Etiquette:</strong>
+                    <ul>
+                        <li><strong>Bowing:</strong> A common greeting and sign of respect.</li>
+                        <li><strong>Shoes:</strong> Remove shoes before entering homes, some restaurants, temples, and traditional accommodations.</li>
+                        <li><strong>Chopsticks:</strong> Don't stick them upright in rice, pass food with them, or point with them.</li>
+                        <li><strong>Tipping:</strong> Not customary and can be considered rude.</li>
+                    </ul>
+                </li>
+                <li><strong>Public Transport:</strong> Japan's public transport is efficient and punctual. Google Maps is excellent for navigation.</li>
+                <li><strong>Wi-Fi:</strong> Rent a pocket Wi-Fi device or buy a local SIM card for reliable internet access.</li>
+                <li><strong>Convenience Stores:</strong> FamilyMart, 7-Eleven, and Lawson are everywhere and offer a wide range of food, drinks, and essentials.</li>
+                <li><strong>Rubbish Bins:</strong> Public rubbish bins are scarce. Carry a small bag for your trash.</li>
+                <li><strong>Tattoos:</strong> While becoming more accepted, tattoos can still be associated with Yakuza. You may be asked to cover them or denied entry to some public baths (onsen) or gyms.</li>
+                <li><strong>Cherry Blossom Viewing:</strong> Be respectful of the trees and other viewers. Don't shake branches or pick blossoms.</li>
+                <li><strong>Luggage Delivery Service (Takkyubin):</strong> Consider using this service to send your main luggage between hotels, especially when moving between cities. It's convenient and reliable.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Japan Travel Helper. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
